@@ -1,0 +1,43 @@
+﻿@model BazaDanych.Data.CMS.Uzytkownicy.SlTypUzytkownika
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Tworzysz nowy typ użytkownika:</h2>
+<hr />
+<div class="container">
+    <div class="row">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-12 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle  pe-2">label</i>
+                        @Html.DisplayNameFor(model => model.NazwaUprawnienia)
+                    </label>
+                    <input asp-for="NazwaUprawnienia" class="form-control validate" />
+                    <span asp-validation-for="NazwaUprawnienia" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-12 p-2">
+                <label class="form-label">
+                    <i class="material-icons-round palette-accent-text-color align-middle">notes</i>
+                    @Html.DisplayNameFor(model => model.OpisUprawnieniaUzytkownika)
+                </label>
+                <textarea class="form-control validate" asp-for="OpisUprawnieniaUzytkownika"></textarea>
+                <span asp-validation-for="OpisUprawnieniaUzytkownika" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <a asp-action="Index" class="btn btn-primary">Powrót</a>
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

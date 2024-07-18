@@ -1,0 +1,66 @@
+﻿@model BazaDanych.Data.Portal.Strona
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Usuwanie</h1>
+
+<h3>Czy na pewno usunąć rekord?</h3>
+
+
+<hr/>
+    <div class="container">
+        <div class="row col-12">
+
+            <div class="col-12 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle pe-2">label</i>
+                        @Html.DisplayNameFor(model => model.LinkTytul)
+                    </label>
+                    <input readonly asp-for="LinkTytul" class="form-control" />
+                </div>
+            </div>
+            <div class="col-12 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle pe-2">label</i>
+                        @Html.DisplayNameFor(model => model.Tytul)
+                    </label>
+                    <input readonly asp-for="Tytul" class="form-control" />
+                </div>
+            </div>
+            <div class="col-12 p-2">
+                <label class="form-label">
+                    <i class="material-icons-round palette-accent-text-color align-middle">notes</i>
+                    @Html.DisplayNameFor(model => model.Tresc)
+                </label>
+                <textarea asp-for="Tresc" readonly class="form-control"></textarea>
+            </div>
+            <div class="col-12 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle pe-2">label</i>
+                        @Html.DisplayNameFor(model => model.Pozycja)
+                    </label>
+                    <input asp-for="Pozycja" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xxl-6 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle pe-2">directions_car</i>
+                        @Html.DisplayNameFor(model => model.SlRodzajeStron)
+                    </label>
+                    <input readonly asp-for="SlRodzajeStron.LinkTytul" class="form-control">
+                </div>
+            </div>
+
+
+        <form asp-action="Delete">
+            <a asp-action="Index" class="btn btn-primary">Powrót</a>
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Usuń" class="btn btn-danger" />
+        </form>
+</div>

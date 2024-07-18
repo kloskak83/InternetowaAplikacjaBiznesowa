@@ -1,0 +1,44 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<BazaDanych.Data.CMS.Aktualnosc>
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Aktualnosci";
+}
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="row mt-4">
+            <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in">
+                <img src="@Configuration.GetSection("AppSettings")["SerwerWWW"]/artykuly/@item.SciezkaDoZdjecia" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 d-flex flex-column justify-contents-center aos-init aos-animate" data-aos="fade-left">
+                <div class="content pt-4 pt-lg-0">
+                    <h3>@item.Naglowek</h3>
+                    <p>
+                        @{
+                            string oryginalnyOpis = item.Opis;
+                            string skroconyString = oryginalnyOpis.Substring(0, Math.Min(oryginalnyOpis.Length, 300));
+                        }
+                     @skroconyString
+                    </p>
+                    <div>
+                        <a class="btn btn-secondary" asp-area="" asp-controller="SzczegolyAktualnosci" asp-action="Index"
+                           asp-route-id="@item.AktualnosciId">
+                            Zobacz
+                        </a>
+                        @* <button type="button" class="btn btn-custom">Zobacz</button> *@
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    }
+    <br />
+    Data i godzina edycji: @DateTime.Now.ToString()
+</div>

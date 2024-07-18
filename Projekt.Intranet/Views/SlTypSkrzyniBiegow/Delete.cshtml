@@ -1,0 +1,26 @@
+﻿@model BazaDanych.Data.CMS.SlTypSkrzyniBiegow
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<h2>Usuwasz skrzynie biegów:</h2>
+
+
+<div>
+    <hr />
+    <dl class="row">
+        <div class="input-group">
+            <label asp-for="NazwaTypuSkrzyniBiegow" class="input-group-text">
+                <i class="material-icons-round align-middle m-1 "></i>
+                Skrznia biegów:
+            </label>
+            <input asp-for="NazwaTypuSkrzyniBiegow" readonly class="form-control validate">
+        </div>
+        <h4 class="m-2">Czy jesteś pewien że chcesz usunąć?</h4>
+        <form asp-action="Delete" class="form-group p-2">
+            <a asp-action="Index" class="btn btn-primary">Powrót</a>
+            <input type="hidden" asp-for="IdSlTypSkrzyniBiegow" />
+            <input type="submit" value="Usuwanie" class="btn btn-danger" />
+
+        </form>
+</div>

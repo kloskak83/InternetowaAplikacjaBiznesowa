@@ -1,0 +1,212 @@
+﻿@model BazaDanych.Data.CMS.Uzytkownicy.Uzytkownik
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h2>Usuwanie</h2>
+
+<h3>Czy na pewno usunąć rekord?</h3>
+<hr />
+<div class="container">
+    <div class="row p-2">
+        <h4>Dane do logowania</h4>
+        <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+            <div class="input-group">
+                <label class="input-group-text">
+                    <i class="material-icons-round align-middle pe-2">person</i>
+                    @Html.DisplayNameFor(model => model.Imie):
+                </label>
+                <input asp-for="Imie" readonly class="form-control validate" />
+            </div>
+        </div>
+
+        <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+            <div class="input-group">
+                <label class="input-group-text">
+                    <i class="material-icons-round align-middle pe-2">person</i>
+                    @Html.DisplayNameFor(model => model.Nazwisko):
+                </label>
+                <input asp-for="Nazwisko" readonly class="form-control validate" />
+            </div>
+        </div>
+
+        <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+            <div class="input-group">
+                <label class="input-group-text">
+                    <i class="material-icons-round align-middle pe-2">alternate_email</i>
+                    @Html.DisplayNameFor(model => model.Email):
+                </label>
+                <input asp-for="Email" readonly class="form-control validate" />
+            </div>
+        </div>
+
+        <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+            <div class="input-group">
+                <label class="input-group-text">
+                    <i class="material-icons-round align-middle pe-2">key</i>
+                    @Html.DisplayNameFor(model => model.Password):
+                </label>
+                <input asp-for="Password" readonly class="form-control validate" />
+            </div>
+        </div>
+
+        <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+            <div class="input-group">
+                <label class="input-group-text">
+                    <i class="material-icons-round align-middle pe-2">call</i>
+                    @Html.DisplayNameFor(model => model.TelefonKontaktowy):
+                </label>
+                <input asp-for="TelefonKontaktowy" readonly class="form-control validate" />
+            </div>
+        </div>
+        </<div>
+            <hr />
+            <div class="row p-2">
+                <h4>Adres zamieszkania</h4>
+                <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+                    <div class="input-group">
+                        <label class="input-group-text">
+                            <i class="material-icons-round align-middle pe-2">home</i>
+                            @Html.DisplayNameFor(model => model.ZamieszkanieAdres):
+                        </label>
+                        <input asp-for="ZamieszkanieAdres" readonly class="form-control validate" />
+                    </div>
+                </div>
+
+                <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+                    <div class="input-group">
+                        <label class="input-group-text">
+                            <i class="material-icons-round align-middle pe-2">home</i>
+                            @Html.DisplayNameFor(model => model.ZamieszkanieMiasto):
+                        </label>
+                        <input asp-for="ZamieszkanieMiasto" readonly class="form-control validate" />
+                    </div>
+                </div>
+
+                <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+                    <div class="input-group">
+                        <label class="input-group-text">
+                            <i class="material-icons-round align-middle pe-2">home</i>
+                            @Html.DisplayNameFor(model => model.ZamieszkanieKodPoczotwy):
+                        </label>
+                        <input asp-for="ZamieszkanieKodPoczotwy" readonly class="form-control validate" />
+                    </div>
+                </div>
+                </<div>
+                    <hr />
+                    <div class="row p-2">
+                        <h4>Adres korespondencyjny (jeżeli inny niż zamieszkania)</h4>
+                        <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+                            <div class="input-group">
+                                <label class="input-group-text">
+                                    <i class="material-icons-round align-middle pe-2">mail</i>
+                                    @Html.DisplayNameFor(model => model.KorespondencyjnyAdres):
+                                </label>
+                                <input asp-for="KorespondencyjnyAdres" readonly class="form-control validate" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+                            <div class="input-group">
+                                <label class="input-group-text">
+                                    <i class="material-icons-round align-middle pe-2">mail</i>
+                                    @Html.DisplayNameFor(model => model.KorespondencyjnyMiasto):
+                                </label>
+                                <input asp-for="KorespondencyjnyMiasto" readonly class="form-control validate" />
+                            </div>
+                        </div>
+                        <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+                            <div class="input-group">
+                                <label class="input-group-text">
+                                    <i class="material-icons-round align-middle pe-2">mail</i>
+                                    @Html.DisplayNameFor(model => model.KoresponedncyjnyKodPocztowy):
+                                </label>
+                                <input asp-for="KoresponedncyjnyKodPocztowy" readonly class="form-control validate" />
+
+                            </div>
+                        </div>
+                        </<div>
+                            <hr />
+                            <div class="row p-2">
+                                <h4>Dane firmy (opcjonalnie)</h4>
+                                <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+                                    <div class="input-group">
+                                        <label class="input-group-text">
+                                            <i class="material-icons-round align-middle pe-2">directions_car</i>
+                                            @Html.DisplayNameFor(model => model.FirmaNazwa):
+                                        </label>
+                                        <input asp-for="FirmaNazwa" readonly class="form-control validate" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+                                    <div class="input-group">
+                                        <label class="input-group-text">
+                                            <i class="material-icons-round align-middle pe-2">directions_car</i>
+                                            @Html.DisplayNameFor(model => model.FirmaNip):
+                                        </label>
+                                        <input asp-for="FirmaNip" readonly class="form-control validate" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6 col-xxl-6 p-2">
+                                    <div class="input-group">
+                                        <label class="input-group-text">
+                                            <i class="material-icons-round align-middle pe-2">directions_car</i>
+                                            @Html.DisplayNameFor(model => model.FirmaAdres):
+                                        </label>
+                                        <input asp-for="FirmaAdres" readonly class="form-control validate" />
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+                                    <div class="input-group">
+                                        <label class="input-group-text">
+                                            <i class="material-icons-round align-middle pe-2">directions_car</i>
+                                            @Html.DisplayNameFor(model => model.FirmaMiasto):
+                                        </label>
+                                        <input asp-for="FirmaMiasto" class="form-control validate" />
+                                        <span asp-validation-for="FirmaMiasto" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+                                    <div class="input-group">
+                                        <label class="input-group-text">
+                                            <i class="material-icons-round align-middle pe-2">directions_car</i>
+                                            @Html.DisplayNameFor(model => model.FirmaKodPocztowy):
+                                        </label>
+                                        <input asp-for="FirmaKodPocztowy" class="form-control validate" />
+                                        <span asp-validation-for="FirmaKodPocztowy" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                </<div>
+                                    <hr />
+                                    <div class="row p-2">
+                                        <h4>Uprawnienia</h4>
+                                        <div class="col-md-12  col-lg-6 col-xxl-6 p-2">
+                                            <div class="input-group">
+                                                <label class="input-group-text">
+                                                    <i class="material-icons-round align-middle pe-2">admin_panel_settings</i>
+                                                    @Html.DisplayNameFor(model => model.IdSlTypUzytkownika):
+                                                </label>
+                                                <input readonly type="text" id="disabledTextInput"
+                                                       class="form-control" placeholder="@Html.DisplayFor(model => model.SlTypUzytkownika.NazwaUprawnienia)">
+                                               
+                                            </div>
+                                        </div>
+
+                                      
+
+                                        <div class="col-sm-12">
+                                            <div class="form-group p-2">
+                                                <form asp-action="Delete">
+                                                    <input type="hidden" asp-for="Id" />                                                     
+                                                    <a asp-action="Index" class="btn btn-primary">Powrót</a>
+                                                    <input type="submit" value="Usuń" class="btn btn-danger" />
+                                                </form>                                               
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>

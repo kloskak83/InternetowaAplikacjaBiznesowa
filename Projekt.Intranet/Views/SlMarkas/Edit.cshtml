@@ -1,0 +1,38 @@
+﻿@model BazaDanych.Data.CMS.SlMarka
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edytujesz markę pojazdu:</h2>
+
+<hr />
+
+<div class="row gy-3">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdSlMarka" />
+
+            <div class="input-group">
+                <label asp-for="MarkaPojazdu" class="input-group-text">
+                    <i class="material-icons-round align-middle m-1 "></i>
+                    Marka pojazdu:
+                </label>
+                <input asp-for="MarkaPojazdu" class="form-control validate">
+            </div>
+
+         
+            <div class="form-group p-2">
+                <a asp-action="Index" class="btn btn-primary">Powrót</a>
+                <input type="submit" value="Zapisz zmiany" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

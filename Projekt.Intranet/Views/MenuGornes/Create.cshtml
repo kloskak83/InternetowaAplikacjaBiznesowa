@@ -1,0 +1,43 @@
+﻿@model BazaDanych.Data.Menu.MenuGorne
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MenuGorne</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NaglowekIntranet" class="control-label"></label>
+                <input asp-for="NaglowekIntranet" class="form-control" />
+                <span asp-validation-for="NaglowekIntranet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NazwaPortal" class="control-label"></label>
+                <input asp-for="NazwaPortal" class="form-control" />
+                <span asp-validation-for="NazwaPortal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypPolaId" class="control-label"></label>
+                <input asp-for="TypPolaId" class="form-control" />
+                <span asp-validation-for="TypPolaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

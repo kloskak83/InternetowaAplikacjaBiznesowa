@@ -1,0 +1,26 @@
+﻿@model BazaDanych.Data.CMS.SlTypSilnika
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<h2>Usuwasz typ silnika:</h2>
+
+
+<div>
+    <hr />
+    <dl class="row">
+        <div class="input-group">
+            <label asp-for="NazwaTypuSilnika" class="input-group-text">
+                <i class="material-icons-round align-middle m-1 "></i>
+                Marka pojazdu:
+            </label>
+            <input asp-for="NazwaTypuSilnika" readonly class="form-control validate">
+        </div>
+        <h4 class="m-2">Czy jesteś pewien że chcesz usunąć?</h4>
+        <form asp-action="Delete" class="form-group p-2">
+            <a asp-action="Index" class="btn btn-primary">Powrót</a>
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Usuwanie" class="btn btn-danger" />
+
+        </form>
+</div>

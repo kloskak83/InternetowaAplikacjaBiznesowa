@@ -1,0 +1,48 @@
+﻿
+@model IEnumerable<BazaDanych.Data.CMS.Pojazd>
+
+<div class="container">
+	<div class="row">
+		@foreach (var item in Model)
+		{
+			<div class="col-md-6 col-lg-4 col-xl-3 g-3">
+				<div class="card">
+					<img src="img/audiq8.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<div>
+							<h5 class="my-0">@item.Model</h5>
+							<small class="text-body-secondary">lub podobny - Segment SUV.</small>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item d-flex justify-content-between lh-sm">
+								<div>
+									<h6 class="my-0">Typ silnika</h6>
+								</div>
+								<span class="text-body-secondary">Benzyna</span>
+							</li>
+							<li class="list-group-item d-flex justify-content-between lh-sm">
+								<div>
+									<h6 class="my-0">Skrzynia biegów</h6>
+								</div>
+								<span class="text-body-secondary">Manualna</span>
+							</li>
+							<li class="list-group-item d-flex justify-content-between lh-sm">
+								<div>
+									<h6 class="my-0">Liczba miejsc</h6>
+
+								</div>
+								<span class="text-body-secondary">5</span>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-secondary">Zobacz ofertę</button>
+
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+</div>
+
+
+
+

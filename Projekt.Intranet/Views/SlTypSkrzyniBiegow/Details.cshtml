@@ -1,0 +1,22 @@
+﻿@model BazaDanych.Data.CMS.SlTypSkrzyniBiegow
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Szczegóły:</h2>
+
+<div>
+    <div class="input-group">
+        <label asp-for="NazwaTypuSkrzyniBiegow" class="input-group-text">
+            <i class="material-icons-round align-middle m-1 "></i>
+            Skrznia biegów:
+        </label>
+        <input asp-for="NazwaTypuSkrzyniBiegow" readonly class="form-control validate">
+    </div>
+</div>
+<div class="m-2">
+    <a asp-action="Index" class="btn btn-primary">Powrót</a>
+    <a asp-action="Edit" asp-route-id="@Model?.IdSlTypSkrzyniBiegow" class="btn btn-primary">Edycja</a>
+</div>
+

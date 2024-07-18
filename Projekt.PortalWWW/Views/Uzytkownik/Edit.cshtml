@@ -1,0 +1,111 @@
+﻿@model BazaDanych.Data.CMS.Uzytkownicy.Uzytkownik
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Uzytkownik</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Imie" class="control-label"></label>
+                <input asp-for="Imie" class="form-control" />
+                <span asp-validation-for="Imie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nazwisko" class="control-label"></label>
+                <input asp-for="Nazwisko" class="form-control" />
+                <span asp-validation-for="Nazwisko" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonKontaktowy" class="control-label"></label>
+                <input asp-for="TelefonKontaktowy" class="form-control" />
+                <span asp-validation-for="TelefonKontaktowy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZamieszkanieAdres" class="control-label"></label>
+                <input asp-for="ZamieszkanieAdres" class="form-control" />
+                <span asp-validation-for="ZamieszkanieAdres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZamieszkanieMiasto" class="control-label"></label>
+                <input asp-for="ZamieszkanieMiasto" class="form-control" />
+                <span asp-validation-for="ZamieszkanieMiasto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZamieszkanieKodPoczotwy" class="control-label"></label>
+                <input asp-for="ZamieszkanieKodPoczotwy" class="form-control" />
+                <span asp-validation-for="ZamieszkanieKodPoczotwy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KorespondencyjnyAdres" class="control-label"></label>
+                <input asp-for="KorespondencyjnyAdres" class="form-control" />
+                <span asp-validation-for="KorespondencyjnyAdres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KorespondencyjnyMiasto" class="control-label"></label>
+                <input asp-for="KorespondencyjnyMiasto" class="form-control" />
+                <span asp-validation-for="KorespondencyjnyMiasto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoresponedncyjnyKodPocztowy" class="control-label"></label>
+                <input asp-for="KoresponedncyjnyKodPocztowy" class="form-control" />
+                <span asp-validation-for="KoresponedncyjnyKodPocztowy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirmaNazwa" class="control-label"></label>
+                <input asp-for="FirmaNazwa" class="form-control" />
+                <span asp-validation-for="FirmaNazwa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirmaNip" class="control-label"></label>
+                <input asp-for="FirmaNip" class="form-control" />
+                <span asp-validation-for="FirmaNip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirmaAdres" class="control-label"></label>
+                <input asp-for="FirmaAdres" class="form-control" />
+                <span asp-validation-for="FirmaAdres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirmaMiasto" class="control-label"></label>
+                <input asp-for="FirmaMiasto" class="form-control" />
+                <span asp-validation-for="FirmaMiasto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirmaKodPocztowy" class="control-label"></label>
+                <input asp-for="FirmaKodPocztowy" class="form-control" />
+                <span asp-validation-for="FirmaKodPocztowy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdSlTypUzytkownika" class="control-label"></label>
+                <select asp-for="IdSlTypUzytkownika" class="form-control" asp-items="ViewBag.IdSlTypUzytkownika"></select>
+                <span asp-validation-for="IdSlTypUzytkownika" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

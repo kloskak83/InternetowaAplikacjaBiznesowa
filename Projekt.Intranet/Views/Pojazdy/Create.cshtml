@@ -1,0 +1,287 @@
+﻿@model BazaDanych.Data.CMS.Pojazd
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Pojazd</h4>
+
+<div class="container">
+    <div class="row col-12">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-md-6 col-lg-6 col-xxl-6 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle pe-2">directions_car</i>
+                        Marka pojazdu:
+                    </label>
+                    <select asp-for="IdSlownikMarka" class="form-control" asp-items="ViewBag.IdSlownikMarka"></select>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6 col-xxl-6 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle  pe-2">label</i>
+                        Model pojazdu:
+                    </label>
+                    <input asp-for="Model" class="form-control validate" />
+                    <span asp-validation-for="Model" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-12 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle pe-2">label</i>
+                        Nazwa marketingowa w serwisie
+                    </label>
+                    <input asp-for="NazwaWSerwisie" class="form-control validate" />
+                    <span asp-validation-for="NazwaWSerwisie" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle pe-2">format_list_numbered</i>
+                        Typ silnika:
+                    </label>                   
+                    <select asp-for="IdTypSilnika" class="form-control" asp-items="ViewBag.IdTypSilnika"></select>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle pe-2">format_list_numbered</i>
+                        Skrzynia biegów:
+                    </label>
+                    <select asp-for="IdTypSkrzyniBiegow" class="form-control" asp-items="ViewBag.IdTypSkrzyniBiegow"></select>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle pe-2">format_list_numbered</i>
+                        Segment pojazdu:
+                    </label>
+                    <select asp-for="IdSegmentPojazdu" class="form-control" asp-items="ViewBag.IdSegmentPojazdu"></select>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round  align-middle  pe-2">filter_1</i>
+                        Pojemność silnika:
+                    </label>
+                    <input asp-for="PojemnoscSilnika" class="form-control" />
+                    <span asp-validation-for="PojemnoscSilnika" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle  pe-2">filter_1</i>
+                        Moc silnika:
+                    </label>
+                    <input asp-for="MocSilnika" class="form-control" />
+                    <span asp-validation-for="MocSilnika" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle  pe-2">filter_1</i>
+                        Spalanie miejskie:
+                    </label>
+                    <input asp-for="SpalanieMiejskie" class="form-control" />
+                    <span asp-validation-for="SpalanieMiejskie" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle  pe-2">exposure_plus_1</i>
+                        Ilość drzwi:
+                    </label>
+                    <input asp-for="IloscDrzwi" class="form-control" />
+                    <span asp-validation-for="IloscDrzwi" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle  pe-2">exposure_plus_1</i>
+                        Ilość drzwi:
+                    </label>
+                    <input asp-for="IloscPoduszek" class="form-control" />
+                    <span asp-validation-for="IloscPoduszek" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round palette-accent-text-color align-middle pe-2">event</i>
+                        Data produkcji:
+                    </label>
+                    <input asp-for="DataProdukcji" class="form-control" type="date" />
+                    <span asp-validation-for="DataProdukcji" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="row">
+                    <div class="col-auto">
+                        <label class="form-check-label">
+                            Klimatyzacja
+                            <i class="material-icons-round align-middle">block</i>
+                        </label>
+                    </div>
+                    <div class="form-switch form-check col-auto">
+                        <input class="form-check-input validate" asp-for="CzyMaKlimatyzacje" type="checkbox" />
+                        <label class="form-check-label">
+                            <i class="material-icons-round align-middle">check_circle</i>
+
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="row">
+                    <div class="col-auto">
+                        <label class="form-check-label">
+                            ABS
+                            <i class="material-icons-round align-middle">block</i>
+                        </label>
+                    </div>
+                    <div class="form-switch form-check col-auto">
+                        <input class="form-check-input validate" asp-for="CzyMaABS" type="checkbox" />
+                        <label class="form-check-label">
+                            <i class="material-icons-round align-middle">check_circle</i>
+
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="row">
+                    <div class="col-auto">
+                        <label class="form-check-label">
+                            Elektryczne szyby
+                            <i class="material-icons-round align-middle">block</i>
+                        </label>
+                    </div>
+                    <div class="form-switch form-check col-auto">
+                        <input class="form-check-input validate" asp-for="CzyMaElektryczneSzyby" type="checkbox" />
+                        <label class="form-check-label">
+                            <i class="material-icons-round align-middle">check_circle</i>
+
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="row">
+                    <div class="col-auto">
+                        <label class="form-check-label">
+                            Podgrzewane lusterka
+                            <i class="material-icons-round align-middle">block</i>
+                        </label>
+                    </div>
+                    <div class="form-switch form-check col-auto">
+                        <input class="form-check-input validate" asp-for="CzyMaPodgrzewaneLusterka" type="checkbox" />
+                        <label class="form-check-label">
+                            <i class="material-icons-round align-middle">check_circle</i>
+
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="row">
+                    <div class="col-auto">
+                        <label class="form-check-label">
+                            Komputer pokładowy
+                            <i class="material-icons-round align-middle">block</i>
+                        </label>
+                    </div>
+                    <div class="form-switch form-check col-auto">
+                        <input class="form-check-input validate" asp-for="CzyMaKomputerPokladowy" type="checkbox" />
+                        <label class="form-check-label">
+                            <i class="material-icons-round align-middle">check_circle</i>
+
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="row">
+                    <div class="col-auto">
+                        <label class="form-check-label">
+                            Centralny zamek
+                            <i class="material-icons-round align-middle">block</i>
+                        </label>
+                    </div>
+                    <div class="form-switch form-check col-auto">
+                        <input class="form-check-input validate" asp-for="CzyMaCentralnyZamek" type="checkbox" />
+                        <label class="form-check-label">
+                            <i class="material-icons-round align-middle">check_circle</i>
+
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 p-2">
+                <label class="form-label">
+                    <i class="material-icons-round palette-accent-text-color align-middle">notes</i>
+                    Opis pojazdu
+                </label>
+                <textarea class="form-control validate" asp-for="OpisPojazdu"></textarea>
+                <span asp-validation-for="OpisPojazdu" class="text-danger"></span>
+            </div>
+
+
+            <div class="col-md-12 col-lg-4 col-xxl-4 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round  align-middle  pe-2">add_photo_alternate</i>
+                    </label>
+                    <input class="form-control" asp-for="Zdjecie" id="formFile" 
+                    type="file" data-val="true" data-val-required="The Zdjęcie field is required." name="Zdjecie">
+                </div>
+                <span asp-validation-for="Zdjecie" class="text-danger"></span>
+            </div>
+        
+            <div class="col-sm-12">
+                <div class="form-group p-2">
+                    <a asp-action="Index" class="btn btn-primary">Powrót</a>
+                    <input type="submit" value="Utwórz" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+     </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

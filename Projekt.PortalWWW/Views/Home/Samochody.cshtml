@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BazaDanych.Data.CMS.Pojazd>
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Samochody";
+}
+<div class="container">
+	<div class="row">
+    @foreach (var item in Model)
+    {
+		<div class="col-md-6 col-lg-4 col-xl-3 g-3">
+			<div class="card">
+					<img src="@Configuration.GetSection("AppSettings")["SerwerWWW"]/samochody/@item.SciezkaDoZdjecia" class="card-img-top" alt="...">
+				<div class="card-body">
+					<div>
+							<h5 class="my-0">@item.NazwaWSerwisie</h5>
+							<small class="text-body-secondary"> lub podobny - Segment SUV.</small>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item d-flex justify-content-between lh-sm">
+							<div>
+								<h6 class="my-0">Typ silnika</h6>
+							</div>
+								<span class="text-body-secondary">@item.SlTypSilnika?.NazwaTypuSilnika</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between lh-sm">
+							<div>
+								<h6 class="my-0">Skrzynia biegów</h6>
+							</div>
+								<span class="text-body-secondary">@item.SlTypSkrzyniBiegow?.NazwaTypuSkrzyniBiegow</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between lh-sm">
+							<div>
+								<h6 class="my-0">Liczba drzwi</h6>
+
+							</div>
+							<span class="text-body-secondary">@item.IloscDrzwi</span>
+						</li>
+					</ul>						
+						<a type="button" class="btn btn-secondary" asp-area="" asp-controller="SzczegolySamochody" asp-action="Index"
+								asp-route-id="@item.IdPojazd">
+							Zobacz ofertę
+						</a>
+
+				</div>
+			</div>
+		</div>
+
+    }
+	</div>
+</div>

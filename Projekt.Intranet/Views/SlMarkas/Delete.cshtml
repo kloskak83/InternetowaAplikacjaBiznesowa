@@ -1,0 +1,27 @@
+﻿@model BazaDanych.Data.CMS.SlMarka
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Usuwasz markę pojazdu:</h2>
+
+
+<div>    
+    <hr />
+    <dl class="row">
+        <div class="input-group">
+            <label asp-for="MarkaPojazdu" class="input-group-text">
+                <i class="material-icons-round align-middle m-1 "></i>
+                Marka pojazdu:
+            </label>
+            <input asp-for="MarkaPojazdu" readonly class="form-control validate">
+            </div>
+        <h4 class="m-2">Czy jesteś pewien że chcesz usunąć?</h4>
+    <form asp-action="Delete" class="form-group p-2">
+        <a asp-action="Index" class="btn btn-primary">Powrót</a>
+        <input type="hidden" asp-for="IdSlMarka" />
+        <input type="submit" value="Usuwanie" class="btn btn-danger" /> 
+        
+    </form>
+</div>

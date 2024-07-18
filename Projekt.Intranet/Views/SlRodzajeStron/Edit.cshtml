@@ -1,0 +1,51 @@
+﻿@model BazaDanych.Data.Portal.SlRodzajeStron
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Rodzaje stron</h4>
+<hr />
+<div class="container">
+    <div class="row">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="col-12 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle pe-2">label</i>
+                        @Html.DisplayNameFor(model => model.LinkTytul)
+                    </label>
+                    <input asp-for="LinkTytul" class="form-control" />
+                    <span asp-validation-for="LinkTytul" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-12 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle pe-2">label</i>
+                        @Html.DisplayNameFor(model => model.Pozycja)
+                    </label>
+                    <input asp-for="Pozycja" class="form-control" />
+                    <span asp-validation-for="Pozycja" class="text-danger"></span>
+                </div>
+            </div>
+            
+         
+            
+            <div class="form-group">
+                <a asp-action="Index" class="btn btn-primary">Powrót</a>
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

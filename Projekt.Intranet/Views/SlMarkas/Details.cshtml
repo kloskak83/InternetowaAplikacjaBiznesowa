@@ -1,0 +1,21 @@
+﻿@model BazaDanych.Data.CMS.SlMarka
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Szczegóły:</h2>
+
+<div>
+    <div class="input-group">
+    <label asp-for="MarkaPojazdu" class="input-group-text">
+        <i class="material-icons-round align-middle m-1 "></i>
+        Marka pojazdu:
+    </label>
+    <input asp-for="MarkaPojazdu" readonly class="form-control validate">
+    </div>
+</div>
+<div class="m-2">
+    <a asp-action="Index" class="btn btn-primary">Powrót</a>
+    <a asp-action="Edit" asp-route-id="@Model?.IdSlMarka" class="btn btn-primary">Edycja</a>
+</div>

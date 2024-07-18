@@ -1,0 +1,23 @@
+﻿@model BazaDanych.Data.CMS.Aktualnosc
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-12 p-2">
+            <h3>@Model.Naglowek</h3>
+        </div>
+        <div class="col-12 col-xl-6 p-2">
+            <img src="@Configuration.GetSection("AppSettings")["SerwerWWW"]/artykuly/@Model.SciezkaDoZdjecia" class="img-fluid" alt="">
+        </div>
+        <div class="col-12 col-xl-6 p-2">
+            <p>
+                @Model.Opis
+            </p>
+            
+        </div>
+    </div>
+</div>
+

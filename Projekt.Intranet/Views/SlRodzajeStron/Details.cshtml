@@ -1,0 +1,42 @@
+﻿@model BazaDanych.Data.Portal.SlRodzajeStron
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Szczegóły</h2>
+
+<div>
+    <h4>Rodzaje storn</h4>
+    <hr />
+    <div class="container">
+        <div class="row">
+    <div class="col-12 p-2">
+        <div class="input-group">
+            <label class="input-group-text">
+                <i class="material-icons-round align-middle pe-2">label</i>
+                @Html.DisplayNameFor(model => model.LinkTytul)
+            </label>
+            <input readonly asp-for="LinkTytul" class="form-control" />
+           
+        </div>
+    </div>
+    <div class="col-12 p-2">
+        <div class="input-group">
+            <label class="input-group-text">
+                <i class="material-icons-round align-middle pe-2">label</i>
+                @Html.DisplayNameFor(model => model.Pozycja)
+            </label>
+            <input readonly asp-for="Pozycja" class="form-control" />
+           
+        </div>
+    </div>
+    </div>
+    </div>
+
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-primary">Powrót</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edytuj</a>
+
+</div>

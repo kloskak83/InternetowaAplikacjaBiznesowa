@@ -1,0 +1,58 @@
+﻿@model BazaDanych.Data.CMS.Aktualnosc
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Usuwanie</h1>
+
+<h3>Czy na pewno usunąć rekord?</h3>
+
+ 
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-12 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round align-middle">label</i>
+                        @Html.DisplayNameFor(model => model.Naglowek):
+                    </label>
+                    <input readonly type="text" id="disabledTextInput" class="form-control" placeholder="@Html.DisplayFor(model => model.Naglowek)">
+                </div>
+            </div>
+            <div class="col-12 p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        <i class="material-icons-round palette-accent-text-color align-middle pe-2">event</i>
+                        @Html.DisplayNameFor(model => model.DataAktualnosci):
+                    </label>
+                    <input readonly asp-for="DataAktualnosci" class="form-control" type="date" placeholder="@Html.DisplayFor(model => model.DataAktualnosci)" />
+                </div>
+            </div>
+            <div class="col-12 p-2">
+                <label class="form-label">
+                    <i class="material-icons-round palette-accent-text-color align-middle">notes</i>
+                    @Html.DisplayNameFor(model => model.Opis)
+                </label>
+                <textarea readonly id="disabledTextArea" class="form-control">@Html.DisplayFor(model => model.Opis)</textarea>
+            </div>
+
+            <div class="col-12 p-2">
+
+                <img src="http://localhost/zdjeciaProjekt/artykuly/@Html.DisplayFor(model => model.SciezkaDoZdjecia)" style="max-width: 400px;" class="img-thumbnail p-md-2" alt="zdjecie">
+            </div>
+        </div>
+    </div>
+
+    <div>
+    <form asp-action="Delete">
+        <a asp-action="Index" class="btn btn-primary">Powrót</a>
+        <input type="hidden" asp-for="AktualnosciId" />
+        <input type="submit" value="Usuń" class="btn btn-danger" />
+    </form>
+
+    </div>
+    
+
+</div>

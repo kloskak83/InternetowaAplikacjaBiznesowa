@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BazaDanych.Data.Portal.StronaNaSztywno>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista stron do edycji</h2>
+
+
+<table class="table table-dark table-striped table-hover table-bordered table-sm align-middle">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LinkTytul)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tresc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    <span class="m-2">
+                @Html.DisplayFor(modelItem => item.LinkTytul)
+                </span>
+            </td>
+            
+                <td><span class="m-2 d-inline-block text-truncate" style="max-width: 400px;">@Html.DisplayFor(modelItem => item.Tresc)</span>
+                    </td>
+               
+            
+            <td>
+                    <a asp-action="Details" asp-route-id="@item.Id "><span class="m-2"><i class="fa-regular fa-eye fa-flip-horizontal fa-xl" style="color: #539dfd;"></i></span></a>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><span class="m-2"><i class="fa-solid fa-wrench fa-xl" style="color: #539dfd;"></i></span></a>                  
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

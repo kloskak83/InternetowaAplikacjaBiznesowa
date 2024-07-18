@@ -1,0 +1,218 @@
+﻿@model BazaDanych.Data.CMS.Pojazd
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 p-2">
+            <h4>@Model.NazwaWSerwisie</h4>
+        </div>
+        <div class="col-12 col-xl-6  p-2">
+            <img src="@Configuration.GetSection("AppSettings")["SerwerWWW"]/samochody/@Model.SciezkaDoZdjecia" class="card-img-top" alt="zdjecie">
+        </div>
+        <div class="col-12 col-xl-6 p-2">
+
+            <div class="p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        Marka pojazdu:
+                    </label>
+                    <input readonly type="text" id="disabledTextInput"
+                           class="form-control" placeholder="@Html.DisplayFor(model => model.SlMarka.MarkaPojazdu)">
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+                        Model pojazdu:
+                    </label>
+                    <input readonly asp-for="Model" class="form-control validate" />
+                </div>
+            </div>
+            <div class=" p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+
+                        Typ silnika:
+                    </label>
+                    <input readonly type="text" id="disabledTextInput"
+                           class="form-control" placeholder="@Html.DisplayFor(model => model.SlTypSilnika.NazwaTypuSilnika)">
+
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+
+                        Skrzynia biegów:
+                    </label>
+                    <input readonly type="text" id="disabledTextInput"
+                           class="form-control" placeholder="@Html.DisplayFor(model => model.SlTypSkrzyniBiegow.NazwaTypuSkrzyniBiegow)">
+                </div>
+            </div>
+            <div class=" p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+
+                        Segment:
+                    </label>
+                    <input readonly type="text" id="disabledTextInput"
+                           class="form-control" placeholder="@Html.DisplayFor(model => model.SlSegmentPojazdu.NazwaSegmentuPojazdu)">
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+
+                        Pojemność silnika:
+                    </label>
+                    <input readonly asp-for="PojemnoscSilnika" class="form-control" />
+
+                </div>
+            </div>
+            <div class=" p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+
+                        Moc silnika:
+                    </label>
+                    <input asp-for="MocSilnika" readonly class="form-control" />
+
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+
+                        Spalanie miejskie:
+                    </label>
+                    <input asp-for="SpalanieMiejskie" readonly class="form-control" />
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+
+                        Ilość drzwi:
+                    </label>
+                    <input readonly asp-for="IloscDrzwi" class="form-control" />
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+
+                        Ilość drzwi:
+                    </label>
+                    <input readonly asp-for="IloscPoduszek" class="form-control" />
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="input-group">
+                    <label class="input-group-text">
+
+                        Data produkcji:
+                    </label>
+                    <input readonly asp-for="DataProdukcji" class="form-control" type="date" />
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="col-12  p-2">
+            <p>
+                @Model.OpisPojazdu
+            </p>
+        </div>
+
+        <div class="col-12 col-sm-4 col-xl-2  p-2">
+            <div class="p-2">
+                <div class="col-auto">
+                    <label class="form-check-label">
+                        Klimatyzacja
+                    </label>
+                </div>
+                <div class="form-switch form-check col-auto">
+                    <input disabled class="form-check-input validate" asp-for="CzyMaKlimatyzacje" type="checkbox" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-xl-2  p-2">
+            <div class="p-2">
+                <div class="col-auto">
+                    <label class="form-check-label">
+                        ABS
+                    </label>
+                </div>
+                <div class="form-switch form-check col-auto">
+                    <input disabled class="form-check-input validate" asp-for="CzyMaABS" type="checkbox" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-xl-2  p-2">
+            <div class="p-2">
+                <div class="col-auto">
+                    <label class="form-check-label">
+                        Elektryczne szyby
+                    </label>
+                </div>
+                <div class="form-switch form-check col-auto">
+                    <input disabled class="form-check-input validate" asp-for="CzyMaElektryczneSzyby" type="checkbox" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-xl-2  p-2">
+            <div class="p-2">
+                <div class="col-auto">
+                    <label class="form-check-label">
+                        Podgrzewane lusterka
+                    </label>
+                </div>
+                <div class="form-switch form-check col-auto">
+                    <input disabled class="form-check-input validate" asp-for="CzyMaPodgrzewaneLusterka" type="checkbox" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-xl-2  p-2">
+            <div class="p-2">
+                <div class="col-auto">
+                    <label class="form-check-label">
+                        Komputer pokładowy
+                    </label>
+                </div>
+                <div class="form-switch form-check col-auto">
+                    <input disabled class="form-check-input validate" asp-for="CzyMaKomputerPokladowy" type="checkbox" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-xl-2  p-2">
+            <div class="p-2">
+                <div class="col-auto">
+                    <label class="form-check-label">
+                        Centralny zamek
+                    </label>
+                </div>
+                <div class="form-switch form-check col-auto">
+                    <input disabled class="form-check-input validate" asp-for="CzyMaCentralnyZamek" type="checkbox" />
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>
+

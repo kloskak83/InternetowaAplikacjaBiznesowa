@@ -1,0 +1,39 @@
+﻿@model BazaDanych.Data.CMS.Uzytkownicy.SlTypUzytkownika
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Usuwanie uprawnień</h2>
+<hr />
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 p-2">
+            <div class="input-group">
+                <label class="input-group-text">
+                    <i class="material-icons-round align-middle  pe-2">label</i>
+                    @Html.DisplayNameFor(model => model.NazwaUprawnienia)
+                </label>
+                <input asp-for="NazwaUprawnienia" readonly class="form-control validate" />
+
+            </div>
+        </div>
+        <div class="col-12 p-2">
+            <label class="form-label">
+                <i class="material-icons-round palette-accent-text-color align-middle">notes</i>
+                @Html.DisplayNameFor(model => model.OpisUprawnieniaUzytkownika)
+            </label>
+            <textarea class="form-control  validate" readonly asp-for="OpisUprawnieniaUzytkownika"></textarea>
+
+        </div>
+        <div class="form-group">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <a asp-action="Index" class="btn btn-primary">Powrót</a>
+                <input type="submit" value="Usuwanie" class="btn btn-danger" />                 
+            </form>
+        </div>
+    </div>
+</div>

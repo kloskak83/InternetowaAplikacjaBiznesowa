@@ -1,0 +1,8 @@
+﻿@model IEnumerable<BazaDanych.Data.Portal.Strona>
+
+@foreach (var item in Model)
+{
+    <li>
+    <a class="dropdown-item" asp-area="" asp-controller="Strony" asp-action="Index" asp-route-id="@item.Id">@item.LinkTytul</a>
+    </li>
+}
